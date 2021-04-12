@@ -2,6 +2,8 @@ package br.com.yagovcb.transacoes.controller;
 
 import br.com.yagovcb.transacoes.services.TransacaoService;
 import br.com.yagovcb.transacoes.services.dto.TransacaoDTO;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -19,10 +21,11 @@ import java.util.List;
  * */
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
+@Slf4j
 public class TransacaoController {
 
-    @Autowired
-    private TransacaoService service;
+    private final TransacaoService service;
 
 
     /**
